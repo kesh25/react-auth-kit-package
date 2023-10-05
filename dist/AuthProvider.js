@@ -15,14 +15,8 @@ import { AuthKitError } from './errors.js';
  *
  * @return Functional Component
  */
-var AuthProvider = function ({
-    children,
-    authType,
-    authName,
-    cookieDomain = window?.location.hostname,
-    cookieSecure = window?.location.protocol === 'https',
-    refresh,
-}) {
+var AuthProvider = function (_a) {
+    var children = _a.children, authType = _a.authType, authName = _a.authName, _b = _a.cookieDomain, cookieDomain = _b === void 0 ? window === null || window === void 0 ? void 0 : window.location.hostname : _b, _c = _a.cookieSecure, cookieSecure = _c === void 0 ? (window === null || window === void 0 ? void 0 : window.location.protocol) === 'https' : _c, refresh = _a.refresh;
     if (authType === 'cookie') {
         if (!cookieDomain) {
             throw new AuthKitError('authType \'cookie\' ' +
@@ -32,7 +26,7 @@ var AuthProvider = function ({
     }
     var refreshTokenName = refresh ? "".concat(authName, "_refresh") : null;
     var tokenObject = new TokenObject(authName, authType, refreshTokenName, cookieDomain, cookieSecure);
-    var _b = React.useReducer(authReducer, tokenObject.initialToken()), authState = _b[0], dispatch = _b[1];
+    var _d = React.useReducer(authReducer, tokenObject.initialToken()), authState = _d[0], dispatch = _d[1];
     if (refresh) {
         useInterval(function () {
             var _a, _b, _c, _d;

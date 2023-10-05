@@ -23,7 +23,6 @@ var AuthProvider = function ({
     cookieSecure = window?.location.protocol === 'https',
     refresh,
 }) {
-    // var children = _a.children, authType = _a.authType, authName = _a.authName, cookieDomain = _a.cookieDomain, cookieSecure = _a.cookieSecure, refresh = _a.refresh;
     if (authType === 'cookie') {
         if (!cookieDomain) {
             throw new AuthKitError('authType \'cookie\' ' +

@@ -28,11 +28,6 @@ export { default as withIsAuthenticated } from './higherOrderComponents/withIsAu
  * limitations under the License.
  * last updated 25th August 2021
  */
-// Default prop for AuthProvider
-// AuthProvider.defaultProps = {
-//     cookieDomain: window.location.hostname,
-//     cookieSecure: window.location.protocol === 'https:',
-// };
 
 export { AuthProvider };
 //# sourceMappingURL=index.js.map
